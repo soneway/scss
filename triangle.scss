@@ -1,0 +1,13 @@
+﻿/*
+生成三角的函数
+*/
+
+//mx_triangle函数
+//$w 三角尺寸
+//$c 三角颜色
+//$deg 旋转角度
+@mixin mx_triangle($w: 20px, $c: #000, $deg: 0deg) {
+    border: $w / 2 solid transparent;
+    border-bottom-color: $c;
+    @include mx_transform(rotateZ($deg));
+}

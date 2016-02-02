@@ -1,0 +1,83 @@
+﻿/*
+scss/ani_in
+简单的进入动画
+*/
+//变量
+$span: 200px !default;
+$spans: 60px !default;
+$distance: 500px !default;
+
+//引入
+@import "scss/ani_trans";
+@import "scss/animate";
+
+.in_l
+{
+    @include ani_trans($tx: -$span);
+}
+
+
+.in_t
+{
+    @include ani_trans($ty: -$span);
+}
+
+
+.in_r
+{
+    @include ani_trans($tx: $span);
+}
+
+
+.in_b
+{
+    @include ani_trans($ty: $span);
+}
+
+
+.ins_l
+{
+    @include ani_trans($tx: -$spans);
+}
+
+
+.ins_t
+{
+    @include ani_trans($ty: -$spans);
+}
+
+
+.ins_r
+{
+    @include ani_trans($tx: $spans);
+}
+
+
+.ins_b
+{
+    @include ani_trans($ty: $spans);
+}
+
+
+.current
+{
+    .ain_l
+    {
+        @include bounceInLeft($distance: $distance, $span: 5px);
+    }
+
+    .ain_t
+    {
+        @include bounceInTop($distance: $distance, $span: 5px);
+    }
+
+    .ain_r
+    {
+        @include bounceInRight($distance: $distance, $span: 5px);
+    }
+
+    .ain_b
+    {
+        @include bounceInBottom($distance: $distance, $span: 5px);
+    }
+}
