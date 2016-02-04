@@ -53,16 +53,16 @@ $anitrans-delay: 0.3s !default;
     .current &
     {
         opacity: 1;
-        @include mx_transition(all $anitrans-duration ease $anitrans-delay);
+        transition: all $anitrans-duration ease $anitrans-delay;
         /*重置为默认值*/
-        @include mx_transform(none !important);
+        transform: none !important;
 
         /*相应倍率的延迟后做动画*/
         @for $i from 1 through 4
         {
             &.at-x#{$i}
             {
-                @include mx_transition-delay($anitrans-duration * $i + $anitrans-delay);
+                transition-delay: $anitrans-duration * $i + $anitrans-delay;
             }
         }
     }
@@ -75,7 +75,7 @@ $anitrans-delay: 0.3s !default;
     {
         &.x#{$i}
         {
-            @include mx_transition-delay($anitrans-duration * $baseX + $anitrans-delay + $span * ($i - 1));
+            transition-delay: $anitrans-duration * $baseX + $anitrans-delay + $span * ($i - 1);
         }
     }
 }
